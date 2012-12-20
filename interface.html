@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>Text Editor Web Interface</title>
+	<link rel="stylesheet" href="jquery-ui.css" type="text/css"/>
+	<script src="jquery-1.8.3.js"></script>
+	<script src="jquery-ui.js"></script>
+	<script>
+    $(function(){
+        $( "#tabs" ).tabs();
+    });
+    </script>
+    
+	<script type="text/javascript" src="js/tiny_mce.js"></script>
+	<script type="text/javascript">
+		tinyMCE.init({
+		mode : "textareas",
+		 
+		theme_advanced_buttons1 : "save,newdocument,|,formatselect,fontselect,fontsizeselect",
+		theme_advanced_statusbar_location : "bottom",
+		theme_advanced_resizing : true,
+		  });
+	</script>
+</head>
+
+<body> 
+	<div id="tabs">
+		<ul>
+			<li><a href="#tabs-1">Tab 1</a></li>
+			<li><a href="#tabs-2">Tab 2</a></li>
+		</ul>
+		<div id="tabs-1">
+			<form>
+        		<textarea></textarea>
+			</form>
+		</div>
+		<div id="tabs-2">
+			<p>Tab2</p>
+		</div>       
+	</div>
+</body>
+</html>
