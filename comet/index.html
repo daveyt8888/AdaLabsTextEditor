@@ -36,7 +36,7 @@ function comet() {
 	});
 }
 
-$(function() {
+/*$(function() {
 	comet();
 	$('#send').bind('keyup', function(e) {
 		var msg = $(this).val();
@@ -51,6 +51,21 @@ $(function() {
 			});
 			$(this).val('')
 		}
+	})
+});*/
+
+$(function() {
+	comet();
+	$('#send').bind('keyup', function(e) {
+		var msg = $(this).val();
+		
+		$.ajax({
+			type : 'GET',
+			url  : 'write.php?msg='+ msg.replace(/\n/g,'<br />'),
+			async : true,
+			cache : false
+		});
+		$(this).val('')		
 	})
 });
 </script>
