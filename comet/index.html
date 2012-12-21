@@ -39,7 +39,7 @@
 				success : function(response) { 				
 					var json = eval('(' + response + ')');
 					
-						$('#send').html(json['msg']);
+						$('#send').html(json['msg']); //displaying on textarea
 						$('#msg').animate({scrollTop: $('#msg').get(0).scrollHeight},200);
 					
 					timestamp  = json['timestamp'];
