@@ -36,24 +36,6 @@ function comet() {
 	});
 }
 
-/*$(function() {
-	comet();
-	$('#send').bind('keyup', function(e) {
-		var msg = $(this).val();
-		if(e.keyCode == 13 && e.shiftKey) { 
-			return ; 
-		}else if(msg!='' && e.keyCode == 13) {
-			$.ajax({
-				type : 'GET',
-				url  : 'write.php?msg='+ msg.replace(/\n/g,'<br />'),
-				async : true,
-				cache : false
-			});
-			$(this).val('')
-		}
-	})
-});*/
-
 $(function() {
 	comet();
 	$('#send').bind('keyup', function(e) {
