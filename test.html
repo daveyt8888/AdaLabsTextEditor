@@ -1,0 +1,24 @@
+<html> 
+	<head>
+		<title>Alerting characters using tinyMCE</title>		
+			
+		<script type="text/javascript" src="js/tiny_mce.js"></script>
+		<script type="text/javascript">
+			tinyMCE.init({
+			mode : "textareas", //ALl textareas converted into editors
+			theme : "simple",
+			
+			setup : function(editor){
+			editor.onKeyPress.add(function(editor, event){			
+				var msg = String.fromCharCode(event.charCode);
+				alert(msg);
+				});        
+			}
+			});
+		</script>
+	</head>
+	
+	<body>
+		<textarea name="content" id="textarea" cols="100" rows="20"></textarea>		
+	</body>
+</html>
