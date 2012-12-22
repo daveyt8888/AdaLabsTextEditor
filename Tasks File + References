@@ -1,7 +1,6 @@
 -Compatible avec les browsers les plus communs
--Différent polices par différents utilisateurs
 -Facilités d’Eclipse pour l’interface
--Meilleure sécurité pour les browsers tels qu IE
+-Meilleure sécurité pour les browsers tels qu IE (Encryption)
 -Compte pour chaque utilisateur
 -Plugins pour synchroniser (Eclipse Cloud)
 -Workspace = nos serveurs
@@ -12,7 +11,7 @@
 -Support different languages (French,...)
 
 References:
-(En construction:Je travaille dessus pour l’instant)
+
 TinyMCE - Download
 
 Solutions alternatives:

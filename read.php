@@ -1,11 +1,11 @@
 <?php 
 	$filename = 'data.txt';
-	$last = isset($_GET['timestamp']) ? $_GET['timestamp'] : 0;
+	$last = isset($_GET['timestamp']) ? $_GET['timestamp'] : 0;  //set timestamp to 0 if not set
 	$current = filemtime($filename);
 
-	while( $current <= $last) {
+	while($current <= $last) {
 		usleep(100000);
-		clearstatcache();
+		clearstatcache(); //clear cache to correct results
 		$current = filemtime($filename);
 	}
 	

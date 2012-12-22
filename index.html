@@ -1,0 +1,100 @@
+<html> 
+	<head>
+		<title>Collaborative Text Editor</title>
+		
+		<!--jQuery-->
+		<link rel="stylesheet" href="jquery-ui.css" type="text/css"/>		
+		<script src="jquery.js"></script>
+		<script src="jquery-ui.js"></script>
+		<script>		
+			$(function(){
+				$( "#tabs" ).tabs();
+			});			
+		</script>
+		
+		<!--tinyMCE
+		<script type="text/javascript" src="js/tiny_mce.js"></script>
+		<script type="text/javascript">		
+			tinyMCE.init({
+				mode : "textareas",
+       
+				theme_advanced_buttons1 : "fontselect,fontsizeselect",
+				theme_advanced_statusbar_location : "bottom",
+				theme_advanced_resizing : true,
+			});
+		</script>-->
+		
+		<!--comet-->
+		<script>
+		
+			var timestamp = null;
+			
+			//Comet function
+			
+			function read(){
+				$.ajax({				
+				url  : 'read.php?timestamp=' + timestamp,
+				cache : false,
+		
+				success : function(data) {
+					
+					var json = eval('(' + data + ')');					
+					
+					$('#div').html(json['msg']); //div supports tags
+						
+					$('#textarea').html(json['msg']);
+					/**May include scrollbars*/
+					
+					timestamp  = json['timestamp'];
+					setTimeout('read()', 1000);
+				},
+				
+				error :function(jqXHR, textStatus, errorThrown) {
+					alert(textStatus);
+					alert("Error:" + errorThrown);
+					setTimeout('read()', 15000);
+				}		
+			});
+			}
+		
+			//ready function (When page have been loaded and ready,this function is executed)
+		
+			$(function(){			
+				
+				read();
+				
+				//waiting for key to be pressed to execute
+
+				/**try event click + clientX as attribute for event*/
+				
+				$('#textarea').on('keypress', function(event){ //Use keypress to obtain charCode
+				
+				var msg = String.fromCharCode(event.charCode);
+				
+				$.ajax({				
+				//url  : 'write.php?msg='+ '<i>' + msg + '</i>',
+				url  : 'write.php?msg='+msg,
+				cache : false
+				});		
+				})
+			});
+		</script>
+	</head>
+	
+	<body>	
+		<div id="tabs">
+			<ul>
+				<li><a href="#tabs-1">Textarea</a></li>
+				<li><a href="#tabs-2">Div</a></li>
+			</ul>
+		
+			<div id="tabs-1">
+				<textarea id="textarea" cols="100" rows="20"> </textarea>	
+			</div>
+			
+			<div id="tabs-2">
+				<div id="div"> </div>
+			</div>		
+		</div>		
+	</body>
+</html>

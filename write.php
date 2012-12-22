@@ -1,7 +1,6 @@
 <?php 
 	$msg = $_GET['msg'];
-	$file = 'data.txt';
-	$handle = fopen($file, 'a');
+	$handle = fopen('data.txt', 'a');
 	fwrite($handle, $msg);
 	fclose($handle);
 	exit;	
