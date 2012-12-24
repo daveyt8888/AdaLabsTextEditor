@@ -6,9 +6,9 @@ References(Tried to classify it by best suited technology):
 -https://gist.github.com/291145<br>
 -http://nodejs.org/<br>
 -https://github.com/tblobaum/nodeQuery<br>
--socket.io/<br>
--websocket.org/quantum.html<br>
--pusher.com/docs/javascript_quick_start
+-www.socket.io/<br>
+-www.websocket.org/quantum.html<br>
+-www.pusher.com/docs/javascript_quick_start
 
 Features to implement (Tried to classify it by prority):
 
