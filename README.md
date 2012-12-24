@@ -3,12 +3,12 @@ AdaLabsTextEditor
 
 References(Tried to classify it by best suited technology):
 
--gleicon's gist: 291145 Gist<br>
--node.js<br>
+-https://gist.github.com/291145<br>
+-http://nodejs.org/<br>
 -https://github.com/tblobaum/nodeQuery<br>
--Socket.IO: the cross-browser WebSocket for realtime apps.<br>
--WebSocket.org | The Benefits of WebSocket<br>
--JavaScript Quick Start | Pusher
+-socket.io/<br>
+-websocket.org/quantum.html<br>
+-pusher.com/docs/javascript_quick_start
 
 Features to implement (Tried to classify it by prority):
 
