@@ -2,30 +2,12 @@
 	<head>
 		<title>Collaborative Text Editor</title>
 
-		<script type="text/javascript" src="js/tiny_mce_src.js"></script>
-		<script type="text/javascript">
-			tinyMCE.init({
-			mode : "textareas", //All textareas converted into editors
-			theme : "simple",
-			
-			/*setup : function(editor){
-			editor.onKeyPress.add(function(editor, event){			
-				var msg = String.fromCharCode(event.charCode);
-				alert(msg);
-				});        
-			}*/
-			});
-		</script>		
+		<script type="text/javascript" src="js/tiny_mce_src.js"></script>				
 		
 		<!--jQuery-->
 		<link rel="stylesheet" href="jquery-ui.css" type="text/css"/>	
 		<script src="jquery.js"></script>
 		<script src="jquery-ui.js"></script>
-		<script>	
-			$(function(){
-			$( "#tabs" ).tabs();
-			});	
-		</script>
 		
 		<!--comet-->
 		<script>
@@ -61,13 +43,29 @@
 				}	
 				});
 			}
-
+			
 			//ready function (When page have been loaded and ready,this function is executed)
-
-			$(function(){	
-
+		
+			$(function(){
+				
 				read();
-
+				
+				$( "#tabs" ).tabs();
+				
+				/**tinyMCE*/
+				tinyMCE.init({
+				mode : "textareas", //All textareas converted into editors
+				theme : "simple",
+			
+				setup : function(editor){
+				editor.onKeyPress.add(function(editor, event){			
+					var msg = String.fromCharCode(event.charCode);
+					alert(msg);
+					});        
+				}
+				});
+				
+				
 				//waiting for key to be pressed to execute
 				
 				$('#textarea').on('keypress', function(event){ //Use keypress to obtain charCode
@@ -89,7 +87,7 @@
 				cache : false
 				});	
 				})
-			});
+			});			
 		</script>
 	</head>
 
