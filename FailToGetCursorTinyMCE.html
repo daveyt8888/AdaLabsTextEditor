@@ -1,43 +1,17 @@
 <html>
 	<head>
-		<title>Collaborative Text Editor</title>
+		<title>Collaborative Text Editor</title>		
 		
 		<!--jQuery-->
 		<link rel="stylesheet" href="jquery-ui.css" type="text/css"/>	
 		<script src="jquery.js"></script>
 		<script src="jquery-ui.js"></script>
-		<script>	
-			$(function(){
-			$( "#tabs" ).tabs();
-			});
-			
-			function doGetCaretPosition (ctrl) {
-
-	var CaretPos = 0;
-	// IE Support
-	if (document.selection) {
-
-		ctrl.focus ();
-		var Sel = document.selection.createRange ();
-
-		Sel.moveStart ('character', -ctrl.value.length);
-
-		CaretPos = Sel.text.length;
-	}
-	// Firefox support
-	else if (ctrl.selectionStart || ctrl.selectionStart == '0')
-		CaretPos = ctrl.selectionStart;
-
-	return (CaretPos);
-
-}
-			
-		</script>
 		
 		<!--comet-->
-		<script>
+		<script type="text/javascript">
 
 			var timestamp = null;
+			var json;
 
 			//Comet function
 
@@ -49,14 +23,15 @@
 
 				success : function(data){
 
-				var json = eval('(' + data + ')');	
+				json = eval('(' + data + ')');	
 
 				$('#div').html(json['msg']); /*div supports tags
 												BUT
 												lose focus on keypress*/
-				$('#textarea').val(json['msg']);
-				/**May include scrollbars*/
-
+				$('#textarea').html(json['msg']);
+				
+				/**May include scrollbars*/					
+				
 				timestamp = json['timestamp'];
 				setTimeout('read()', 1000);
 				},
@@ -65,22 +40,50 @@
 				alert(textStatus);
 				alert("Error:" + errorThrown);
 				setTimeout('read()', 15000);
-				}	
+				}
 				});
 			}
-
+			
 			//ready function (When page have been loaded and ready,this function is executed)
-
-			$(function(){	
-
+		
+			$(function(){
+				
 				read();
 				
+				tinyMCE.init({
+				mode : "textareas", //All textareas converted into editors
+				theme : "simple",
+			
+				setup : function(editor){
+				editor.onKeyPress.add(function(editor, event){
 				
+					tinyMCE.activeEditor.setContent(json['msg']);
+					
+					alert(editor.selection.getRng());
+					/*var msg = String.fromCharCode(event.charCode);
+
+					$.ajax({
+					url : 'write.php?msg='+msg,
+					cache : false
+					});					
+					});*/
+				})
+				}
+				
+				});
+				
+				
+				
+				
+				
+				
+				/**jQuery*/
+				$( "#tabs" ).tabs();
 				
 				//waiting for key to be pressed to execute
-				
+				/*
 				$('#textarea').on('keypress', function(event){ //Use keypress to obtain charCode
-				
+
 				var msg = String.fromCharCode(event.charCode);
 
 				$.ajax({
@@ -97,8 +100,8 @@
 				url : 'write.php?msg='+msg,
 				cache : false
 				});	
-				})
-			});
+				})*/
+			});			
 		</script>
 	</head>
 
@@ -110,7 +113,7 @@
 			</ul>
 
 			<div id="tabs-1">
-				<textarea id="textarea" cols="100" rows="20" onclick="alert(doGetCaretPosition(this));"> </textarea>	
+				<textarea id="textarea" name="textarea" cols="100" rows="20"></textarea>	
 			</div>
 
 			<div id="tabs-2">
