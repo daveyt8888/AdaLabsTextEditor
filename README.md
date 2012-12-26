@@ -1,7 +1,7 @@
 AdaLabsTextEditor
 ================
 
-References(Tried to classify it by best suited technology):
+References (Tried to classify it by best suited technology):
 
 -https://gist.github.com/291145<br>
 -http://nodejs.org/<br>
