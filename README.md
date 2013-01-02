@@ -3,6 +3,10 @@ AdaLabsTextEditor
 
 References (Tried to classify it by best suited technology):
 
+-https://github.com/josephg/ShareJS<br>
+-https://github.com/opencoweb/cowebx<br>
+-https://github.com/opencoweb/coweb-jsoe<br>
+https://github.com/opencoweb/cowebx<br>
 -https://gist.github.com/291145<br>
 -http://nodejs.org/<br>
 -https://github.com/tblobaum/nodeQuery<br>
