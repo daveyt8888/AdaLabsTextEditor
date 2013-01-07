@@ -19,6 +19,7 @@ Features to implement (Tried to classify it by prority):
 -Try to use source codes desktop text editor to implement on web tool<br>
 -Support programming language definition<br>
 -History of edits<br>
+-Tutorials to show users how to use the app<br>
 -Run codes<br>
 -Support search and replace<br>
 -Show line number<br>
@@ -35,5 +36,6 @@ Features to implement (Tried to classify it by prority):
 -IDE features (like Eclipse,...)<br>
 -Meilleure s�curit� pour les browsers tels qu IE (Encryption)<br>
 -Support different languages (French,...)<br>
+-Support Terminal to execute commands<br>
 -Plugins pour synchroniser (Eclipse Cloud)<br>
 -Edit music and play
