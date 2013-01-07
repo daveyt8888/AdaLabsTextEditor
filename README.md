@@ -20,6 +20,9 @@ Features to implement (Tried to classify it by prority):
 -Support programming language definition<br>
 -History of edits<br>
 -Tutorials to show users how to use the app<br>
+-Search for a file on the server<br>
+-Support validators such as JSONLint,CSSLint and XML Validator
+-Allow to commit AND save what to be run(Refer to scenario)<br>
 -Run codes<br>
 -Support search and replace<br>
 -Show line number<br>
@@ -37,5 +40,6 @@ Features to implement (Tried to classify it by prority):
 -Meilleure s�curit� pour les browsers tels qu IE (Encryption)<br>
 -Support different languages (French,...)<br>
 -Support Terminal to execute commands<br>
+-Control multiple cursors at a time(Can type OR indent at different positions)<br>
 -Plugins pour synchroniser (Eclipse Cloud)<br>
 -Edit music and play
