@@ -19,6 +19,7 @@ Features to implement (Tried to classify it by prority):
 -Try to use source codes desktop text editor to implement on web tool<br>
 -Support programming language definition<br>
 -History of edits<br>
+-Enable lite mode for better performance BUT less features<br>
 -Tutorials to show users how to use the app<br>
 -Search for a file on the server<br>
 -Support validators such as JSONLint,CSSLint and XML Validator
