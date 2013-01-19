@@ -38,7 +38,7 @@ Features to implement (Tried to classify it by prority):
 -Sound notification for chat<br>
 -Facilit�s d�Eclipse pour l�interface<br>
 -IDE features (like Eclipse,...)<br>
--Meilleure s�curit� pour les browsers tels qu IE (Encryption)<br>
+-Meilleure s�curit� pour les browsers tels qu IE (Encryption AND Security framework)<br>
 -Support different languages (French,...)<br>
 -Support Terminal to execute commands<br>
 -Control multiple cursors at a time(Can type OR indent at different positions)<br>
