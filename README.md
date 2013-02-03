@@ -4,17 +4,20 @@ AdaLabsTextEditor
 References (Tried to classify it by best suited technology):
 
 -https://github.com/josephg/ShareJS<br>
--https://github.com/opencoweb/cowebx<br>
--https://github.com/opencoweb/coweb-jsoe<br>
-https://github.com/opencoweb/cowebx<br>
--https://gist.github.com/291145<br>
--http://nodejs.org/<br>
--https://github.com/tblobaum/nodeQuery<br>
--www.socket.io/<br>
--www.websocket.org/quantum.html<br>
--www.pusher.com/docs/javascript_quick_start
 
 Features to implement (Tried to classify it by prority):
+
+Ada 2012
+- Data management (persistancy, history ...)
+- Operational Transformation Processor (apply transformation and adjustment)
+- Web services gateways
+
+Javascript:
+- Gui rendering
+- User interaction
+- Build web requests and call the corresponding web services
+   for exemple build the Operational Transformation requests and send them
+- Update GUI content 
 
 -Try to use source codes desktop text editor to implement on web tool<br>
 -Support programming language definition<br>
