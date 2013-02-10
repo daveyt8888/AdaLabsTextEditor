@@ -8,9 +8,40 @@
 		<script src="jquery-ui.js"></script>
 		<script>	
 			$(function(){
-				$( "#tabs" ).tabs();
+				$("#tabs").tabs();
 			});
 		</script>
+		
+		<script>
+        
+            function getIndex(element){
+                
+                //Internet Explorer
+                /*var position = 0;
+                
+            	if (document.selection){
+            
+            		element.focus();
+            		var Sel = document.selection.createRange();
+            
+            		Sel.moveStart('character', -element.value.length);
+            
+            		position = Sel.text.length;
+                }*/
+                
+                
+                //Firefox
+				var toDisplay = "Action/Position/Character<br>";
+				
+				var action = "";
+				toDisplay += action + "/" + element.selectionStart + "/";
+				
+				var character = "";
+				toDisplay += character;
+                
+                $('#divDisplay').html(toDisplay);
+            }
+        </script> 
 	</head>
 
 	<body>	
@@ -21,12 +52,15 @@
 			</ul>
 
 			<div id="tabs-1">
-				<textarea id="textarea" cols="100" rows="20" onclick="alert(doGetCaretPosition(this));"> </textarea>	
+				<textarea id="textarea" cols="100" rows="20" onkeypress="getIndex(this);"> </textarea>	
 			</div>
 
 			<div id="tabs-2">
 				<div id="div" contentEditable="true"> </div>
 			</div>	
-		</div>	
+		</div>
+
+<!-- For displaying action, position, character -->
+        <div id = "divDisplay"></div>		
 	</body>
 </html>
