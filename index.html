@@ -41,8 +41,20 @@
 					
 					toDisplay += action + "/" + element.selectionStart + "/" + character;
 					$('#divDisplay').html(toDisplay);
-				});
-			});
+					
+					//For selected text: element.selectionEnd - element.selectionStart
+					
+					/**Testing purposes (on keypress close tab2)*/
+					$('#tab2').remove();
+					
+				});//END of keypress function
+			});//END of ready function
+			
+			/**Not complete*/
+			function close(){
+				//Removing div (Closing tab)
+				$('#tab2').remove();
+			}
 		</script>
 	</head>
 
@@ -50,7 +62,7 @@
 		<div id="tabs">
 			<ul>
 				<li><a href="#tabs-1">Textarea</a></li>
-				<li><a href="#tabs-2">Div</a></li>
+				<li id="tab2"><a href="#tabs-2">Textarea2</a><button id="btn2" onclick="close()">X</button></li>
 			</ul>
 
 			<div id="tabs-1">
@@ -58,11 +70,12 @@
 			</div>
 
 			<div id="tabs-2">
-				<div id="div" contentEditable="true"> </div>
+				<textarea id="textarea2" cols="100" rows="20"></textarea>
 			</div>	
 		</div>
 
 <!-- For displaying action, position, character -->
-        <div id = "divDisplay"></div>		
+        <div id = "divDisplay"></div>
+		<button onclick="close()">X</button>
 	</body>
 </html>
