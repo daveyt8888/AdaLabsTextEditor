@@ -51,9 +51,15 @@
 					$('#tab2').remove();
 					
 				});//END of keypress function
+				
+				$('button.close').click(function(){			
+					$('#tab2').remove();
+				});//END of click function
+				
 			});//END of ready function
-			
-			/**Not complete*/
+				
+				
+				/**Not complete*/
 			function close(){
 				//Removing div (Closing tab)
 				$('#tab2').remove();
@@ -65,7 +71,7 @@
 		<div id="tabs">
 			<ul>
 				<li><a href="#tabs-1">Textarea</a></li>
-				<li id="tab2"><a href="#tabs-2">Textarea2</a><button id="btn2" onclick="close()">X</button></li>
+				<li id="tab2"><a href="#tabs-2">Textarea2</a><button class="close">X</button></li>
 			</ul>
 
 			<div id="tabs-1">
@@ -79,6 +85,5 @@
 
 <!-- For displaying action, position, character -->
         <div id = "divDisplay"></div>
-		<button onclick="close()">X</button>
 	</body>
 </html>
