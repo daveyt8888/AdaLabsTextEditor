@@ -7,11 +7,11 @@
 		<script src="jquery.js"></script>
 		<script src="jquery-ui.js"></script>
 		<script>	
-			$(function(){
+			$(function(){			
+				//Initialise tabs to the div with id tabs below 
 				$("#tabs").tabs();
 				
-				//waiting for key to be pressed to execute
-				
+				//waiting for key to be pressed to execute				
 				$('#textarea').on('keypress', function(event){ //Use keypress to obtain charCode
 					//Internet Explorer
 					/*var position = 0;
@@ -31,15 +31,18 @@
 					element = document.getElementById("textarea");
 					
 					var toDisplay = "Action/Position/Character<br>";
-				
+					
+					//IF key pressed is either "Backspace" OR "Delete"
 					if(event.keyCode==8 || event.keyCode==46){
 						var action = "Delete";
 					}else{
 						var action = "Insert";
+						//Convert charCode to String for concatenation
 						var character = String.fromCharCode(event.charCode);
 					}
 					
 					toDisplay += action + "/" + element.selectionStart + "/" + character;
+					//innerHTML attribute changed to the String contained in variable toDisplay
 					$('#divDisplay').html(toDisplay);
 					
 					//For selected text: element.selectionEnd - element.selectionStart
