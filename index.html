@@ -52,13 +52,18 @@
 					
 				});//END of keypress function
 				
+				$('#addtab').click(function(){
+					//Add tab on clicking on 'addtab' button with parameters tabs("add",URL,"label",index[optional])
+					$("#tabs").tabs("add","","label");					
+				});
+				
 				$('button.close').click(function(){			
 					$('#tab2').remove();
 				});//END of click function
 				
 			});//END of ready function
 				
-				
+			 
 				/**Not complete*/
 			function close(){
 				//Removing div (Closing tab)
@@ -68,8 +73,8 @@
 	</head>
 
 	<body>	
-		<div id="tabs">
-			<ul>
+		<div id="tabs" class="alltabs">
+			<ul class="addingTabs">
 				<li><a href="#tabs-1">Textarea</a></li>
 				<li id="tab2"><a href="#tabs-2">Textarea2</a><button class="close">X</button></li>
 			</ul>
@@ -85,5 +90,6 @@
 
 <!-- For displaying action, position, character -->
         <div id = "divDisplay"></div>
+		<input type='button' value='+' id='addtab'/>
 	</body>
 </html>
